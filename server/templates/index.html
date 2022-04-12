@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>QRCode</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.0/jquery.min.js"></script>
+</head>
+
+<body>
+<script>setTimeout("location.href='/'", 1000)</script>
+<center>
+        <p id="code">{{code}}</p>
+</center>
+<div id="qrcode">
+    <script type="text/javascript">
+        new QRCode(document.getElementById("qrcode"), window.atob($("#code").text())); // 设置要生成二维码的链接
+    </script>
+</div>
+
+</body>
+
+<style>
+    #qrcode {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+</html>
